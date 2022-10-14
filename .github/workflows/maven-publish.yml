@@ -40,7 +40,7 @@ jobs:
         env:
           MONGODB_SRV_USERNAME: ${{ secrets.MONGODB_SRV_USERNAME }}
         run: |
-          echo $MONGODB_SRV_USERNAME
+          echo '${MONGODB_SRV_USERNAME}'
 
 
 
