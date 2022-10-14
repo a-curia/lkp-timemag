@@ -34,6 +34,12 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
+      - name: Retrieve the secret and decode it to a file
+        env:
+          MONGODB_SRV_USERNAME: ${{ secrets.MONGODB_SRV_USERNAME }}
+        run: |
+          echo $MONGODB_SRV_USERNAME
+
 #      - name: Publish to GitHub Packages Apache Maven
 #        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
 #        env:
