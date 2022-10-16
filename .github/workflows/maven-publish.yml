@@ -35,13 +35,14 @@ jobs:
 
 
       - name: Build with Maven
-        working-directory: github-actions-java-maven
+#        working-directory: github-actions-java-maven
         run: mvn -DMONGODB_SRV_USERNAME=${{ secrets.MONGODB_SRV_USERNAME }} -DMONGODB_SRV_PASSWORD=${{ secrets.MONGODB_SRV_PASSWORD }} -DMONGODB_SRV_DATABASE=${{ secrets.MONGODB_SRV_DATABASE }} -B package --file pom.xml
 
-#      - name: Upload Maven build artifact
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: artifact.jar
+      - name: Upload Maven build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact.jar
+          path: ./target/application.jar
 #          path: github-actions-java-maven/target/github-actions-java-maven.jar
 
 #      - name: Publish to GitHub Packages Apache Maven
