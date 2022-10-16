@@ -35,11 +35,7 @@ jobs:
 
 
       - name: Build with Maven
-        env:
-          MONGODB_SRV_USERNAME: ${{ secrets.MONGODB_SRV_USERNAME }}
-          MONGODB_SRV_PASSWORD: ${{ secrets.MONGODB_SRV_PASSWORD }}
-          MONGODB_SRV_DATABASE: ${{ secrets.MONGODB_SRV_DATABASE }}
-        run: mvn -DMONGODB_SRV_USERNAME=${{MONGODB_SRV_USERNAME}} -DMONGODB_SRV_PASSWORD=${{MONGODB_SRV_PASSWORD}} -DMONGODB_SRV_DATABASE=${{MONGODB_SRV_DATABASE}} -B package --file pom.xml
+        run: mvn -DMONGODB_SRV_USERNAME=${{ secrets.MONGODB_SRV_USERNAME }} -DMONGODB_SRV_PASSWORD=${{ secrets.MONGODB_SRV_PASSWORD }} -DMONGODB_SRV_DATABASE=${{ secrets.MONGODB_SRV_DATABASE }} -B package --file pom.xml
 
 
 #      - name: Publish to GitHub Packages Apache Maven
