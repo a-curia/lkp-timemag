@@ -45,6 +45,9 @@ jobs:
           path: ./target/application.jar
 #          path: github-actions-java-maven/target/github-actions-java-maven.jar
 
+
+
+
 #      - name: Publish to GitHub Packages Apache Maven
 #        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
 #        env:
