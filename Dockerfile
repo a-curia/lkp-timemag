@@ -1,6 +1,10 @@
 # For Java 11, try this
 FROM adoptopenjdk/openjdk11:alpine-jre
 
+# security related to user
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/spring-boot-web.jar
 
